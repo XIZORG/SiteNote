@@ -7,7 +7,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class EoNoteApplication {
 
 	public static void main(String[] args) {
+
 		SpringApplication.run(EoNoteApplication.class, args);
+		System.out.println("LOL");
 	}
 
 }
