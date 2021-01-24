@@ -18,8 +18,7 @@ public class RegisterPerson {
         this.password = password;
     }
 
-    public RegisterPerson(){
-
+    public RegisterPerson() {
     }
 
     public Long getId() {
