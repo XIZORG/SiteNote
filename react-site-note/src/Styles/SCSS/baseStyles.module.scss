@@ -1,0 +1,62 @@
+$bgcol1: #111;
+$bgcol2: #243238;
+
+$col_light_pink: #e35182;
+$col_light_green: #0fd58a;
+$col_light_purple: #a421c5;
+
+$col_text_link: #4789bd;
+$col_blue: #1869ff;
+$col_blue_dark: #0140b4;
+
+@mixin btn($color, $bgcolor, $bgcolorHover) {
+  background-color: $bgcolor;
+  color: $color;
+
+  font-size: 18px;
+  border-radius: 7px;
+  padding: 15px 40px;
+  font-weight: 700;
+  transition: background-color;
+  &:hover {
+    background-color: $bgcolorHover;
+  }
+}
+
+@mixin li_underboard($color, $underboard_color) {
+  color: $color;
+  &:hover {
+
+  }
+}
+
+@font-face {
+  src: url('./../Fonts/zyphyte-regular.ttf');
+  font-family: 'Zyphyite';
+}
+
+@font-face {
+  src: url('./../Fonts/zany-races-regular.ttf');
+  font-family: 'Zeny';
+}
+
+@font-face {
+  src: url('./../Fonts/rueck-regular.ttf');
+  font-family: 'Rueck';
+}
+
+@font-face {
+  src: url('./../Fonts/PTSans-Regular.ttf');
+  font-family: 'PTSans';
+  font-weight: 400;
+}
+
+@font-face {
+  src: url('./../Fonts/PTSans-Bold.ttf');
+  font-family: 'PTSans';
+  font-weight: 700;
+}
+
+body {
+  font-family: 'PTSans', serif;
+}

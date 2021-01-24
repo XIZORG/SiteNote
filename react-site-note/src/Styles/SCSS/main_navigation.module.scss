@@ -1,0 +1,59 @@
+@import 'baseStyles.module';
+.main_navigation {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 50px;
+  width: 100%;
+  height: 60px;
+}
+
+.logo {
+  font-size: 48px;
+  display: flex;
+  align-items: center;
+  width: 140px;
+  justify-content: space-between;
+  font-family: 'Zeny', serif;
+  margin-left: 25px;
+
+  img {
+    width: 40px;
+  }
+
+  .logo_letter_pink {
+    color: $col_light_pink;
+  }
+  .logo_letter_green {
+    color: $col_light_green;
+  }
+  .logo_letter_purple {
+    color: $col_light_purple;
+  }
+}
+.nav {
+  color: $col_text_link;
+  font-weight: 700;
+  font-size: 20px;
+  ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    li+li {
+      margin-left: 45px;
+    }
+    li {
+      cursor: pointer;
+    }
+  }
+}
+.buttons_handler {
+  padding-right: 200px;
+  display: flex;
+  align-items: center;
+  button+button {
+    margin-left: 20px;
+  }
+  button {
+    @include btn(white, $col_blue, $col_blue_dark);
+  }
+}

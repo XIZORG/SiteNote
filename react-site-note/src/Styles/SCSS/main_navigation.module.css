@@ -1,0 +1,95 @@
+@font-face {
+  src: url("./../Fonts/zyphyte-regular.ttf");
+  font-family: "Zyphyite";
+}
+@font-face {
+  src: url("./../Fonts/zany-races-regular.ttf");
+  font-family: "Zeny";
+}
+@font-face {
+  src: url("./../Fonts/rueck-regular.ttf");
+  font-family: "Rueck";
+}
+@font-face {
+  src: url("./../Fonts/PTSans-Regular.ttf");
+  font-family: "PTSans";
+  font-weight: 400;
+}
+@font-face {
+  src: url("./../Fonts/PTSans-Bold.ttf");
+  font-family: "PTSans";
+  font-weight: 700;
+}
+body {
+  font-family: "PTSans", serif;
+}
+
+.main_navigation {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 50px;
+  width: 100%;
+  height: 60px;
+}
+
+.logo {
+  font-size: 48px;
+  display: flex;
+  align-items: center;
+  width: 140px;
+  justify-content: space-between;
+  font-family: "Zeny", serif;
+  margin-left: 25px;
+}
+.logo img {
+  width: 40px;
+}
+.logo .logo_letter_pink {
+  color: #e35182;
+}
+.logo .logo_letter_green {
+  color: #0fd58a;
+}
+.logo .logo_letter_purple {
+  color: #a421c5;
+}
+
+.nav {
+  color: #4789bd;
+  font-weight: 700;
+  font-size: 20px;
+}
+.nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+.nav ul li + li {
+  margin-left: 45px;
+}
+.nav ul li {
+  cursor: pointer;
+}
+
+.buttons_handler {
+  padding-right: 200px;
+  display: flex;
+  align-items: center;
+}
+.buttons_handler button + button {
+  margin-left: 20px;
+}
+.buttons_handler button {
+  background-color: #1869ff;
+  color: white;
+  font-size: 18px;
+  border-radius: 7px;
+  padding: 15px 40px;
+  font-weight: 700;
+  transition: background-color;
+}
+.buttons_handler button:hover {
+  background-color: #0140b4;
+}
+
+/*# sourceMappingURL=main_navigation.module.css.map */
