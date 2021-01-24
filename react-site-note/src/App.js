@@ -1,19 +1,26 @@
 import React from 'react';
 import Header from "./Components/Header/Header";
 import './Styles/CSS/minify.css';
+import './Styles/CSS/fonts.css';
+import './Styles/CSS/base.css'
 import './Styles/SCSS/app.css'
-import MainNavigation from "./Components/MainNavigation/MainNavigation";
 import {getData} from "./DAL/DAL_API";
+import {Route} from "react-router-dom";
+import MainPage from "./Components/MainNavigationHandler/MainNavigationContainer";
+import CreatorsPage from "./Components/ContentPages/CreatorsPage/CreatorsPage";
+import LoginMenuContainer from "./Components/LoginMenu/LoginMenuContainer";
 
 function App() {
     return (
         <div className="App">
             <Header/>
             <div className="container">
-                <MainNavigation/>
+                <Route path="/" render={() => <MainPage/>}/>
+                <Route path="/main" render={() => <MainPage/>}/>
+                <Route path="/creators" render={() => <CreatorsPage/>}/>
+                <Route path="/login" render={() => <LoginMenuContainer/>}/>
             </div>
         </div>
     );
 }
-getData();
 export default App;

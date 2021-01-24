@@ -1,13 +1,21 @@
+//Background
 $bgcol1: #111;
 $bgcol2: #243238;
-
+//For letters
 $col_light_pink: #e35182;
 $col_light_green: #0fd58a;
 $col_light_purple: #a421c5;
+$col_light_yellow: #fdfc90;
 
 $col_text_link: #4789bd;
+//Buttons
 $col_blue: #1869ff;
 $col_blue_dark: #0140b4;
+
+$col_purple: #a421c5;
+$col_dark_purple: #6c0f86;
+
+$col_gray: #989898;
 
 @mixin btn($color, $bgcolor, $bgcolorHover) {
   background-color: $bgcolor;
@@ -23,40 +31,22 @@ $col_blue_dark: #0140b4;
   }
 }
 
-@mixin li_underboard($color, $underboard_color) {
-  color: $color;
-  &:hover {
-
+@mixin li_underboard($underboard_color) {
+  &:hover::before {
+    @include li_underboard_style($underboard_color);
   }
 }
 
-@font-face {
-  src: url('./../Fonts/zyphyte-regular.ttf');
-  font-family: 'Zyphyite';
+@mixin li_underboard_style($underboard_color) {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 5px;
+  background-color: $underboard_color;
+  bottom: 5px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
 }
 
-@font-face {
-  src: url('./../Fonts/zany-races-regular.ttf');
-  font-family: 'Zeny';
-}
 
-@font-face {
-  src: url('./../Fonts/rueck-regular.ttf');
-  font-family: 'Rueck';
-}
 
-@font-face {
-  src: url('./../Fonts/PTSans-Regular.ttf');
-  font-family: 'PTSans';
-  font-weight: 400;
-}
-
-@font-face {
-  src: url('./../Fonts/PTSans-Bold.ttf');
-  font-family: 'PTSans';
-  font-weight: 700;
-}
-
-body {
-  font-family: 'PTSans', serif;
-}

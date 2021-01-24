@@ -1,0 +1,11 @@
+.login_menu_wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.login_menu {
+  color: white;
+}
+
+/*# sourceMappingURL=login_menu.css.map */

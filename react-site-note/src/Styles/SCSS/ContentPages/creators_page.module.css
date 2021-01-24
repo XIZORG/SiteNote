@@ -1,0 +1,107 @@
+.information_title {
+  font-size: 96px;
+  width: 900px;
+  margin-bottom: 200px;
+}
+
+.information_stairs .stair + .stair {
+  margin-top: 40px;
+}
+
+.stair {
+  display: flex;
+  width: 930px;
+}
+.stair:nth-child(2) {
+  padding-left: 240px;
+}
+.stair:nth-child(3) {
+  padding-left: 480px;
+}
+
+.stair_title {
+  width: 100px;
+  font-size: 48px;
+  margin-right: 140px;
+}
+
+.stair_text {
+  font-size: 24px;
+  color: #989898;
+}
+
+.aboutCreators {
+  margin-top: 170px;
+}
+
+.aboutCreators_title {
+  font-size: 96px;
+}
+
+.personCards {
+  margin-top: 70px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.personCard {
+  width: 450px;
+  display: flex;
+  flex-direction: column;
+}
+.personCard:nth-child(1) .personCard_name {
+  color: #fdfc90;
+}
+.personCard:nth-child(2) .personCard_name {
+  color: #0fd58a;
+}
+
+.personCard_image {
+  transition: transform 0.2s ease-in;
+  cursor: pointer;
+}
+.personCard_image:hover {
+  transform: translateY(-15px);
+}
+.personCard_image img {
+  border-radius: 10px;
+}
+
+.personCard_name {
+  margin-top: 50px;
+  font-size: 34px;
+}
+
+.personCard_speciality {
+  margin-top: 25px;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.personCard_description {
+  margin-top: 30px;
+  font-size: 24px;
+  color: #989898;
+}
+
+.footer {
+  margin-top: 300px;
+  position: relative;
+}
+.footer::before {
+  position: absolute;
+  content: "";
+  background-color: #989898;
+  width: 99.5vw;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50vw);
+  height: 2px;
+}
+
+.footer_title {
+  font-size: 34px;
+}
+
+/*# sourceMappingURL=creators_page.module.css.map */

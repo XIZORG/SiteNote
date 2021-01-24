@@ -1,33 +1,8 @@
-@font-face {
-  src: url("./../Fonts/zyphyte-regular.ttf");
-  font-family: "Zyphyite";
-}
-@font-face {
-  src: url("./../Fonts/zany-races-regular.ttf");
-  font-family: "Zeny";
-}
-@font-face {
-  src: url("./../Fonts/rueck-regular.ttf");
-  font-family: "Rueck";
-}
-@font-face {
-  src: url("./../Fonts/PTSans-Regular.ttf");
-  font-family: "PTSans";
-  font-weight: 400;
-}
-@font-face {
-  src: url("./../Fonts/PTSans-Bold.ttf");
-  font-family: "PTSans";
-  font-weight: 700;
-}
-body {
-  font-family: "PTSans", serif;
-}
-
 .header {
   background-color: #243238;
   width: 100%;
   position: fixed;
+  z-index: 1000;
   left: 0;
   top: 0;
   height: 60px;

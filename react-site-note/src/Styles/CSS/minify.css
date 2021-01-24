@@ -133,4 +133,18 @@ template {
 button {
     background-color: transparent;
     border: 0;
+    cursor: pointer;
+    outline: none;
+}
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'PTSans', serif;
+}
+a {
+    color: white;
+    text-decoration: none;
 }
