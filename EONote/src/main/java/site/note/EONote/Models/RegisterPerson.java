@@ -18,6 +18,10 @@ public class RegisterPerson {
         this.password = password;
     }
 
+    public RegisterPerson(){
+
+    }
+
     public Long getId() {
         return id;
     }
