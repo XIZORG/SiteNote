@@ -17,10 +17,6 @@ public class MainController {
 
     @GetMapping("/allUsers")
     public List<RegisterPerson> showAll(){
-        registerRepositories.save(new RegisterPerson("lol", "pass3"));
-        registerRepositories.save(new RegisterPerson("kek", "pass2"));
-        registerRepositories.save(new RegisterPerson("bek", "pass1"));
-
         return registerRepositories.findAll();
     }
 }
