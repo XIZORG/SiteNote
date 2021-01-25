@@ -52,6 +52,7 @@ public class MainController {
             RegisterPerson truePerson = registerRepositories.findByLogin(body.getString("login"));
             truePerson.setPassword(encryptor.decrypt(truePerson.getPassword()));
             if (truePerson.getPassword().equals(registerPerson.getPassword())) {
+                truePerson.setPassword(null);
                 return truePerson;
             }
         } catch (NullPointerException ex) {
