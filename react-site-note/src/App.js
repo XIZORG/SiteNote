@@ -9,6 +9,7 @@ import {Route} from "react-router-dom";
 import MainPage from "./Components/MainNavigationHandler/MainNavigationContainer";
 import CreatorsPage from "./Components/ContentPages/CreatorsPage/CreatorsPage";
 import LoginMenuContainer from "./Components/LoginMenu/LoginMenuContainer";
+import RegistrationMenuContainer from "./Components/RegistrationMenu/RegistrationMenuContainer";
 
 function App() {
     return (
@@ -19,6 +20,7 @@ function App() {
                 <Route path="/main" render={() => <MainPage/>}/>
                 <Route path="/creators" render={() => <CreatorsPage/>}/>
                 <Route path="/login" render={() => <LoginMenuContainer/>}/>
+                <Route path="/register" render={() => <RegistrationMenuContainer/>}/>
             </div>
         </div>
     );

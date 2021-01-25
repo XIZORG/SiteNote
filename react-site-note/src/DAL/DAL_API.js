@@ -5,4 +5,3 @@ const axios_instance = axios.create({
 });
 export default axios_instance;
 
-export const try_to_get = () => axios_instance.get('allUsers').then(response => console.log(response));

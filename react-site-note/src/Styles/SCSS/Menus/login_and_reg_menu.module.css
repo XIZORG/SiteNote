@@ -50,7 +50,7 @@
 .login_menu .input_login span:before {
   transition: transform 0.25s ease-in-out;
   position: absolute;
-  content: "Email";
+  content: "Login";
   color: #989898;
   left: 0;
   bottom: 10px;
@@ -59,7 +59,7 @@
 .login_menu .input_login span.active:before {
   transition: transform 0.25s ease-in-out;
   position: absolute;
-  content: "Email";
+  content: "Login";
   color: #989898;
   left: 0;
   bottom: 10px;
@@ -120,4 +120,86 @@
   color: #4789bd;
 }
 
-/*# sourceMappingURL=login_menu.module.css.map */
+.login_menu_wrapper.register .input_login, .login_menu_wrapper.register .input_password {
+  margin-top: 0;
+}
+.login_menu_wrapper.register .input_login span.active:before {
+  transition: transform 0.25s ease-in-out;
+  position: absolute;
+  content: "Login";
+  color: #989898;
+  left: 0;
+  bottom: 10px;
+  transform: translateY(-25px);
+}
+.login_menu_wrapper.register .input_password span.active:before {
+  transition: transform 0.25s ease-in-out;
+  position: absolute;
+  content: "Password";
+  color: #989898;
+  left: 0;
+  bottom: 10px;
+  transform: translateY(-25px);
+}
+.login_menu_wrapper.register .input_email {
+  position: relative;
+}
+.login_menu_wrapper.register .input_email span {
+  transition: transform 0.2s ease-in;
+}
+.login_menu_wrapper.register .input_email span:before {
+  transition: transform 0.25s ease-in-out;
+  position: absolute;
+  content: "Email";
+  color: #989898;
+  left: 0;
+  bottom: 10px;
+  transform: translateY(0);
+}
+.login_menu_wrapper.register .input_email span.active:before {
+  transition: transform 0.25s ease-in-out;
+  position: absolute;
+  content: "Email";
+  color: #989898;
+  left: 0;
+  bottom: 10px;
+  transform: translateY(-25px);
+}
+.login_menu_wrapper.register .input_phone {
+  position: relative;
+}
+.login_menu_wrapper.register .input_phone span {
+  transition: transform 0.2s ease-in;
+}
+.login_menu_wrapper.register .input_phone span:before {
+  transition: transform 0.25s ease-in-out;
+  position: absolute;
+  content: "Phone";
+  color: #989898;
+  left: 0;
+  bottom: 10px;
+  transform: translateY(0);
+}
+.login_menu_wrapper.register .input_phone span.active:before {
+  transition: transform 0.25s ease-in-out;
+  position: absolute;
+  content: "Phone";
+  color: #989898;
+  left: 0;
+  bottom: 10px;
+  transform: translateY(-25px);
+}
+.login_menu_wrapper.register .logo {
+  margin-bottom: 30px;
+}
+.login_menu_wrapper.register .button {
+  margin-top: 80px;
+}
+.login_menu_wrapper.register .login_menu {
+  padding: 60px 50px 80px;
+}
+.login_menu_wrapper.register .login_menu .input_field + .input_field {
+  margin-top: 36px;
+}
+
+/*# sourceMappingURL=login_and_reg_menu.module.css.map */

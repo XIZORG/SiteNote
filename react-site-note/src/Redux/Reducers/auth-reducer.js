@@ -1,4 +1,4 @@
-import {sendAuthToServer} from "../../DAL/auth_api";
+import {sendAuthToServer, sendRegisterToServer} from "../../DAL/auth_api";
 
 const SET_USER_DATA = "SET_USER_DATA";
 
@@ -15,7 +15,9 @@ export const authReducer = (state = initialState, action) => {
 
 //Thunks
 export const tryToLogin = (email,password) => (dispatch) => {
-    console.log('Works!');
     sendAuthToServer(email,password);
+}
+export const tryToRegister = (login, password, email, number) => (dispatch) => {
+    sendRegisterToServer(login, password, email, number);
 }
 

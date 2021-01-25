@@ -1,10 +1,19 @@
 import axios_in from './DAL_API';
 
 export const sendAuthToServer = (login, password) => {
-    axios_in.post('addUser', {
+    return axios_in.post('addUser', {
         login: login,
         password: password
-    }).then(response => {
-        console.log(response);
     })
 }
+
+export const sendRegisterToServer = (login, password, email, number) => {
+    return axios_in.post('registerUser', {
+        login,
+        password,
+        email,
+        number
+    })
+}
+
+

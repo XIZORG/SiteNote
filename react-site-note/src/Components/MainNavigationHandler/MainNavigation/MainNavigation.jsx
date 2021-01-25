@@ -51,7 +51,7 @@ const MainNavigation = (props) => {
                 </ul>
             </nav>
             <div className={s.buttons_handler}>
-                <NavLink to="/">
+                <NavLink to="/register">
                     <button>
                         Зарегистрируйся!
                     </button>

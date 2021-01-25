@@ -71,9 +71,9 @@
     margin-top: 65px;
     span {
       transition: transform;
-      @include before_input_text('Email', $col_gray, 0);
+      @include before_input_text('Login', $col_gray, 0);
       &.active {
-        @include before_input_text('Email', $col_gray, -35px);
+        @include before_input_text('Login', $col_gray, -35px);
       }
     }
   }
@@ -115,6 +115,64 @@
     transition: color 0.15s ease-in;
     &:hover{
       color: $col_text_link;
+    }
+  }
+}
+//////////////////////////////REGISTER
+.login_menu_wrapper {
+  &.register{
+    .input_login, .input_password {
+      margin-top: 0;
+    }
+
+    .input_login {
+      span {
+        &.active {
+          @include before_input_text('Login', $col_gray, -25px);
+        }
+      }
+    }
+    .input_password {
+      span {
+        &.active {
+          @include before_input_text('Password', $col_gray, -25px);
+        }
+      }
+    }
+    .input_email {
+      position: relative;
+      span {
+        transition: transform 0.2s ease-in;
+        @include before_input_text('Email', $col_gray, 0);
+        &.active {
+          @include before_input_text('Email', $col_gray, -25px);
+        }
+      }
+    }
+    .input_phone {
+      position: relative;
+      span {
+        transition: transform 0.2s ease-in;
+        @include before_input_text('Phone', $col_gray, 0);
+        &.active {
+          @include before_input_text('Phone', $col_gray, -25px);
+        }
+      }
+    }
+
+    .logo {
+      margin-bottom: 30px;
+    }
+
+    .button {
+      margin-top: 80px;
+    }
+
+    .login_menu {
+      padding: 60px 50px 80px;
+      .input_field + .input_field {
+        margin-top: 36px;
+      }
     }
   }
 }

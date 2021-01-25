@@ -1,4 +1,4 @@
-import s from '../../Styles/SCSS/Menus/login_menu.module.css';
+import s from '../../Styles/SCSS/Menus/login_and_reg_menu.module.css';
 import {useEffect, useState} from "react";
 import {Field} from "redux-form";
 import React from 'react';
