@@ -48,10 +48,14 @@ public class MainController {
         JSONObject body = new JSONObject(reqStr);
         RegisterPerson registerPerson = new RegisterPerson(body.getString("login"),
                 body.getString("password"));
-
-        RegisterPerson truePerson = registerRepositories.findByLogin(body.getString("login"));
-        if (encryptor.decrypt(truePerson.getPassword()).equals(registerPerson.getPassword())) {
-            return truePerson;
+        try {
+            RegisterPerson truePerson = registerRepositories.findByLogin(body.getString("login"));
+            truePerson.setPassword(encryptor.decrypt(truePerson.getPassword()));
+            if (truePerson.getPassword().equals(registerPerson.getPassword())) {
+                return truePerson;
+            }
+        } catch (NullPointerException ex) {
+            return null;
         }
         return null;
     }
