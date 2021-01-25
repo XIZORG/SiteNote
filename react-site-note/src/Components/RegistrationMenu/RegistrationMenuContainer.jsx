@@ -8,6 +8,7 @@ const RegistrationMenuContainer = (props) => {
 
     let onSubmit = (data) => {
         console.log(data);
+        return;
         props.tryToRegister(data.login, data.password, data.email, data.number);
     }
 

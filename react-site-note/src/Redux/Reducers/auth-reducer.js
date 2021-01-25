@@ -15,9 +15,11 @@ export const authReducer = (state = initialState, action) => {
 
 //Thunks
 export const tryToLogin = (email,password) => (dispatch) => {
-    sendAuthToServer(email,password);
+    sendAuthToServer(email,password).then(response => {
+       console.log(response);
+    });
 }
 export const tryToRegister = (login, password, email, number) => (dispatch) => {
-    sendRegisterToServer(login, password, email, number);
+    sendRegisterToServer(login, password, email, number)
 }
 

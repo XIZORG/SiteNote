@@ -52,7 +52,7 @@ const MainNavigation = (props) => {
             </nav>
             <div className={s.buttons_handler}>
                 <NavLink to="/register">
-                    <button>
+                    <button onClick={() => {goToPage("RegisterMenu")}}>
                         Зарегистрируйся!
                     </button>
                 </NavLink>

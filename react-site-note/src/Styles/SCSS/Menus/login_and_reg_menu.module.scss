@@ -171,8 +171,20 @@
     .login_menu {
       padding: 60px 50px 80px;
       .input_field + .input_field {
-        margin-top: 36px;
+        margin-top: 44px;
       }
     }
+    .error_wrapper {
+      position: relative;
+      .error {
+        left: 0;
+        top: 5px;
+        position: absolute;
+        color: red;
+        font-size: 14px;
+      }
+    }
+
+
   }
 }
