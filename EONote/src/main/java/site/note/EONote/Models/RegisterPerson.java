@@ -12,6 +12,29 @@ public class RegisterPerson {
     private Long id;
 
     private String login, password;
+    private String email, telephone;
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getTelephone() {
+        return telephone;
+    }
+
+    public RegisterPerson(Long id, String login, String password) {
+        this.id = id;
+        this.login = login;
+        this.password = password;
+    }
+
+    public void setTelephone(String telephone) {
+        this.telephone = telephone;
+    }
 
     public RegisterPerson(String login, String password) {
         this.login = login;
