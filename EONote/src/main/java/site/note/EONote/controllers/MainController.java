@@ -31,15 +31,16 @@ public class MainController {
         return registerRepositories.findAll();
     }
 
-    //НЕ ФАКТ ЧТО РАБОТАЕТ
+
     @CrossOrigin(origins = "http://localhost:3000")
     @RequestMapping("/addUser")
-    public String add (@RequestBody Map<String, String> body) throws Exception{
+    public String add (@RequestBody String reqStr) throws Exception{
+        JSONObject body = new JSONObject(reqStr);
         System.out.println(body);
-        registerRepositories.save(new RegisterPerson(body.get("login"),
-                encryptor.encrypt(body.get("password"))));
+        registerRepositories.save(new RegisterPerson(body.getString("login"),
+                encryptor.encrypt(body.getString("password"))));
 
-        return body.get("password");
+        return "ok";
     }
 
     @GetMapping("/getUser/{id}")
