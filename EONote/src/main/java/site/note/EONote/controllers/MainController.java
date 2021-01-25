@@ -43,6 +43,19 @@ public class MainController {
         return "ok";
     }
 
+    @RequestMapping("/login")
+    public RegisterPerson login (@RequestBody String reqStr) throws Exception{
+        JSONObject body = new JSONObject(reqStr);
+        RegisterPerson registerPerson = new RegisterPerson(body.getString("login"),
+                body.getString("password"));
+
+        RegisterPerson truePerson = registerRepositories.findByLogin(body.getString("login"));
+        if (encryptor.decrypt(truePerson.getPassword()).equals(registerPerson.getPassword())) {
+            return truePerson;
+        }
+        return null;
+    }
+
     @GetMapping("/getUser/{id}")
     public List<RegisterPerson> showUser(@PathVariable(value = "id") long id){
         Optional<RegisterPerson> optional =  registerRepositories.findById(id);
