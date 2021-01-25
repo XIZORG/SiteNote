@@ -12,6 +12,7 @@ import org.springframework.security.crypto.keygen.KeyGenerators;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @CrossOrigin(origins = "http://localhost:3000")
@@ -31,10 +32,14 @@ public class MainController {
     }
 
     //НЕ ФАКТ ЧТО РАБОТАЕТ
-    @PostMapping("/addUser")
-    public void add (@RequestBody JSONObject body) throws Exception{
-        registerRepositories.save(new RegisterPerson(body.getString("login"),
-                encryptor.encrypt(body.getString("password"))));
+    @CrossOrigin(origins = "http://localhost:3000")
+    @RequestMapping("/addUser")
+    public String add (@RequestBody Map<String, String> body) throws Exception{
+        System.out.println(body);
+        registerRepositories.save(new RegisterPerson(body.get("login"),
+                encryptor.encrypt(body.get("password"))));
+
+        return body.get("password");
     }
 
     @GetMapping("/getUser/{id}")
