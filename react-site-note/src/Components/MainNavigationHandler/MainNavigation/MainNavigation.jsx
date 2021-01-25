@@ -5,12 +5,12 @@ import {NavLink} from "react-router-dom";
 const MainNavigation = (props) => {
 
     let generateStyleForNav = (pageName) => {
-        if(props.currentPage === pageName) return s.underboard_active;
+        if (props.currentPage === pageName) return s.underboard_active;
         return '';
     }
 
     let goToPage = (pageName) => {
-        if(pageName && props.currentPage !== pageName) {
+        if (pageName && props.currentPage !== pageName) {
             props.setCurrentPage(pageName);
         }
     }
@@ -29,21 +29,38 @@ const MainNavigation = (props) => {
             </div>
             <nav className={s.nav}>
                 <ul>
-                    <li onClick={() => { goToPage('main')}} className={generateStyleForNav('main')}>
+                    <li
+                        onClick={() => {
+                            goToPage('main')
+                        }} className={generateStyleForNav('main')}>
                         <NavLink to={'/'}>Menu</NavLink>
                     </li>
-                    <li onClick={() => { goToPage('')}} className={generateStyleForNav('settings')}>Settings</li>
-                    <li onClick={() => { goToPage('creators')}} className={generateStyleForNav('creators')}>
+                    <li onClick={() => {
+                        goToPage('')
+                    }} className={generateStyleForNav('settings')}>Settings
+                    </li>
+                    <li onClick={() => {
+                        goToPage('creators')
+                    }} className={generateStyleForNav('creators')}>
                         <NavLink to={'/creators'}>Creators</NavLink>
                     </li>
-                    <li onClick={() => { goToPage('')}} className={generateStyleForNav('about')}>About</li>
+                    <li onClick={() => {
+                        goToPage('')
+                    }} className={generateStyleForNav('about')}>About
+                    </li>
                 </ul>
             </nav>
             <div className={s.buttons_handler}>
-                <button>Зарегистрируйся!</button>
-                <button>
-                    <NavLink to="/login"> Логин </NavLink>
-                </button>
+                <NavLink to="/">
+                    <button>
+                        Зарегистрируйся!
+                    </button>
+                </NavLink>
+                <NavLink to="/login">
+                    <button onClick={() => {goToPage("LoginMenu")}}>
+                        Логин
+                    </button>
+                </NavLink>
             </div>
 
         </div>

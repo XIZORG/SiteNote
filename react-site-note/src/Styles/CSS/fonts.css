@@ -24,3 +24,9 @@
     font-family: 'PTSans';
     font-weight: 700;
 }
+
+@font-face {
+    src: url('./../Fonts/Poppins-Bold.ttf');
+    font-family: 'Poppins';
+    font-weight: 700;
+}

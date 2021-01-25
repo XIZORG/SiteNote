@@ -1,0 +1,120 @@
+@import './../baseStyles.module';
+
+@mixin before_input_text($text, $color, $transform_Y_px) {
+  &:before {
+    transition: transform 0.25s ease-in-out;
+    position: absolute;
+    content: $text;
+    color: $color;
+    left: 0;
+    bottom: 10px;
+    transform: translateY($transform_Y_px);
+  }
+}
+
+.login_menu_wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.login_menu {
+  margin-top: -110px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $col_dark_purple;
+  color: white;
+  width: 400px;
+  height: 550px;
+  padding: 90px 50px 30px;
+  border-radius: 7px;
+  box-shadow: black;
+}
+
+.title {
+  font-size: 36px;
+  font-family: 'Poppins', serif;
+}
+
+.logo {
+  margin-top: 40px;
+  width: 60px;
+  height: 60px;
+}
+
+.login_menu {
+
+  input {
+    position: relative;
+    color: white;
+
+    width: 300px;
+    background-color: transparent;
+    border: 0;
+    outline: none;
+    border-bottom: 2px solid white;
+    font-size: 22px;
+    padding-bottom: 4px;
+  }
+
+  input[type="text"] {
+
+  }
+
+  input[type="password"] {
+
+  }
+
+  .input_login {
+    position: relative;
+    margin-top: 65px;
+    span {
+      transition: transform;
+      @include before_input_text('Email', $col_gray, 0);
+      &.active {
+        @include before_input_text('Email', $col_gray, -35px);
+      }
+    }
+  }
+
+  .input_password {
+    position: relative;
+    margin-top: 65px;
+    span {
+      transition: transform 0.2s ease-in;
+      @include before_input_text('Password', $col_gray, 0);
+      &.active {
+        @include before_input_text('Password', $col_gray, -35px);
+      }
+    }
+  }
+}
+.button {
+  margin-top: 100px;
+  button {
+    background: linear-gradient(to left, #ff000f, #760aaa);
+    background-size: 200%;
+    padding: 15px 45px;
+    border-radius: 10px;
+    font-size: 24px;
+    color: white;
+    border: 1px white solid;
+    transition: transform 0.3s cubic-bezier(.17,.67,1,1.23), background-position .2s ease-in;
+
+    &:hover {
+      transform: scale(1.1,1.1);
+      background-position: right;
+    }
+  }
+}
+.footer {
+  margin-top: 30px;
+  a {
+    color: white;
+    transition: color 0.15s ease-in;
+    &:hover{
+      color: $col_text_link;
+    }
+  }
+}

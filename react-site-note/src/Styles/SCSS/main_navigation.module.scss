@@ -68,15 +68,20 @@
 .buttons_handler {
   display: flex;
   align-items: center;
-  button+button {
+  a+a {
     margin-left: 20px;
   }
-  button {
-    &:nth-child(n) {
-      @include btn(white, $col_blue, $col_blue_dark);
+
+  a {
+    &:nth-child(1) {
+      button {
+        @include btn(white, $col_blue, $col_blue_dark)
+      }
     }
-    &:nth-child(2n) {
-      @include btn(white, $col_light_purple, $col_dark_purple);
+    &:nth-child(2) {
+      button {
+        @include btn(white, $col_light_purple, $col_dark_purple)
+      }
     }
   }
 }

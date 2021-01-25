@@ -1,7 +1,8 @@
 import * as axios from 'axios';
 
-export const getData = () => {
-    axios.get('http://localhost:8080/api/allUsers').then(response => {
-       console.log(response);
-    });
-}
+const axios_instance = axios.create({
+    baseURL: "http://localhost:8080/api/"
+});
+export default axios_instance;
+
+export const try_to_get = () => axios_instance.get('allUsers').then(response => console.log(response));
