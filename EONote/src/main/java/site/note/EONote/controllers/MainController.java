@@ -43,9 +43,9 @@ public class MainController {
                     encryptor.encrypt(body.getString("password")),
                     body.getString("email"),
                     body.getString("phone")));
-            return "success: true";
+            return new JSONObject().put("success", "true").toString();
         } else{
-            return "success: false";
+            return new JSONObject().put("success", "false").toString();
         }
     }
 
