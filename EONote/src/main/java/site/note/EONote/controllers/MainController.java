@@ -32,8 +32,6 @@ public class MainController {
     @RequestMapping("/registration")
     public String add (@RequestBody String reqStr) throws Exception{
         JSONObject body = new JSONObject(reqStr);
-        System.out.println(body);
-
         RegisterPerson truePers = registerRepositories.findByLoginOrEmailOrTelephone(
             body.getString("login"),
             body.getString("email"),
