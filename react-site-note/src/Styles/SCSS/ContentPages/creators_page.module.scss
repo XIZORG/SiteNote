@@ -13,7 +13,7 @@
 }
 .information_stairs {
   .stair + .stair {
-    margin-top: 40px;
+    margin-top: 60px;
   }
 }
 .stair {
@@ -33,6 +33,7 @@
 }
 .stair_text {
   font-size: 24px;
+  line-height: 1.3;
   color: $col_gray;
 }
 .aboutCreators {

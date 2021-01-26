@@ -7,13 +7,15 @@ export const sendAuthToServer = (login, password) => {
     })
 }
 
-export const sendRegisterToServer = (login, password, email, number) => {
-    return axios_in.post('registration', {
+export const sendRegisterToServer = (login, password, email, phone) => {
+    let obj = {
         login,
         password,
         email,
-        number
-    })
+        phone
+    }
+    console.log(obj);
+    return axios_in.post('registration', obj);
 }
 
 

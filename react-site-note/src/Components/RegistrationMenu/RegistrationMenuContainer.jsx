@@ -7,9 +7,7 @@ import {tryToRegister} from "../../Redux/Reducers/auth-reducer";
 const RegistrationMenuContainer = (props) => {
 
     let onSubmit = (data) => {
-        console.log(data);
-        return;
-        props.tryToRegister(data.login, data.password, data.email, data.number);
+        props.tryToRegister(data.login, data.password, data.email, data.phone);
     }
 
     let A = reduxForm({form: "RegisterForm"})(RegistrationMenu);

@@ -20,6 +20,8 @@ export const tryToLogin = (email,password) => (dispatch) => {
     });
 }
 export const tryToRegister = (login, password, email, number) => (dispatch) => {
-    sendRegisterToServer(login, password, email, number)
+    sendRegisterToServer(login, password, email, number).then(response => {
+       console.log(response);
+    });
 }
 
