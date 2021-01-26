@@ -1,6 +1,7 @@
 package site.note.EONote.controllers;
 
 import netscape.javascript.JSObject;
+import org.hibernate.NonUniqueResultException;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -32,17 +33,24 @@ public class MainController {
     }
 
 
-    @CrossOrigin(origins = "http://localhost:3000")
     @RequestMapping("/registration")
-    public String add (@RequestBody String reqStr) throws Exception{
+    public Boolean add (@RequestBody String reqStr) throws Exception{
         JSONObject body = new JSONObject(reqStr);
         System.out.println(body);
-        registerRepositories.save(new RegisterPerson(body.getString("login"),
-                encryptor.encrypt(body.getString("password")),
-                body.getString("email"),
-                body.getString("telephone")));
 
-        return "ok";
+        RegisterPerson truePers = registerRepositories.findByLoginOrEmailOrTelephone(
+            body.getString("login"),
+            body.getString("email"),
+            body.getString("phone"));
+        if (truePers == null) {
+            registerRepositories.save(new RegisterPerson(body.getString("login"),
+                    encryptor.encrypt(body.getString("password")),
+                    body.getString("email"),
+                    body.getString("phone")));
+            return true;
+        } else{
+        return false;
+        }
     }
 
     @RequestMapping("/login")
@@ -65,6 +73,9 @@ public class MainController {
             }
         } catch (NullPointerException ex) {
             answer.put("status", "user does not exist");
+            return answer.toString();
+        } catch (Exception exeption) {
+            answer.put("status", "uncorrect data/fail");
             return answer.toString();
         }
         answer.put("status", "some false");
