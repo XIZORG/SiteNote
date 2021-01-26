@@ -44,8 +44,14 @@ public class MainController {
                     body.getString("email"),
                     body.getString("phone")));
             return new JSONObject().put("success", true).toString();
-        } else{
-            return new JSONObject().put("success", false).toString();
+        } else if(body.getString("login").equals(truePers.getLogin())){
+            return new JSONObject().put("success", false).put("comment", "login duplicate").toString();
+        }else if(body.getString("email").equals(truePers.getEmail())){
+            return new JSONObject().put("success", false).put("comment", "email duplicate").toString();
+        }else if(body.getString("phone").equals(truePers.getTelephone())){
+            return new JSONObject().put("success", false).put("comment", "phone duplicate").toString();
+        } else {
+            return new JSONObject().put("success", false).put("comment", "unknown error").toString();
         }
     }
 
@@ -60,21 +66,18 @@ public class MainController {
             RegisterPerson truePerson = registerRepositories.findByLogin(body.getString("login"));
             truePerson.setPassword(encryptor.decrypt(truePerson.getPassword()));
             if (truePerson.getPassword().equals(registerPerson.getPassword())) {
-                answer.put("status", "successfully");
+                answer.put("success", true);
                 answer.put("id", truePerson.getId());
                 answer.put("login", truePerson.getLogin());
                 answer.put("email", truePerson.getEmail());
                 answer.put("telephone", truePerson.getTelephone());
                 return answer.toString();
             }
-        } catch (NullPointerException ex) {
-            answer.put("status", "user does not exist");
-            return answer.toString();
         } catch (Exception exeption) {
-            answer.put("status", "uncorrect data/fail");
+            answer.put("success", false);
             return answer.toString();
         }
-        answer.put("status", "some false");
+        answer.put("success", false);
         return answer.toString();
     }
 
