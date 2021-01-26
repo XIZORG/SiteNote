@@ -65,10 +65,13 @@ public class MainController {
             truePerson.setPassword(encryptor.decrypt(truePerson.getPassword()));
             if (truePerson.getPassword().equals(registerPerson.getPassword())) {
                 answer.put("success", true);
-                answer.put("id", truePerson.getId());
-                answer.put("login", truePerson.getLogin());
-                answer.put("email", truePerson.getEmail());
-                answer.put("telephone", truePerson.getTelephone());
+                JSONObject userData = new JSONObject()
+                        .put("id", truePerson.getId())
+                        .put("login", truePerson.getLogin())
+                        .put("email", truePerson.getEmail())
+                        .put("telephone", truePerson.getTelephone());
+
+                answer.put("userData", userData);
                 return answer.toString();
             }
         } catch (Exception exeption) {
