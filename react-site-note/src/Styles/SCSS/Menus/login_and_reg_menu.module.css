@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .login_menu_wrapper {
   width: 100%;
   display: flex;
@@ -15,7 +16,7 @@
   height: 550px;
   padding: 90px 50px 30px;
   border-radius: 7px;
-  box-shadow: black;
+  transition: all 0.3s ease-in;
 }
 
 .title {
@@ -50,7 +51,7 @@
 .login_menu .input_login span:before {
   transition: transform 0.25s ease-in-out;
   position: absolute;
-  content: "Login";
+  content: "Логин";
   color: #989898;
   left: 0;
   bottom: 10px;
@@ -59,7 +60,7 @@
 .login_menu .input_login span.active:before {
   transition: transform 0.25s ease-in-out;
   position: absolute;
-  content: "Login";
+  content: "Логин";
   color: #989898;
   left: 0;
   bottom: 10px;
@@ -75,7 +76,7 @@
 .login_menu .input_password span:before {
   transition: transform 0.25s ease-in-out;
   position: absolute;
-  content: "Password";
+  content: "Пароль";
   color: #989898;
   left: 0;
   bottom: 10px;
@@ -84,7 +85,7 @@
 .login_menu .input_password span.active:before {
   transition: transform 0.25s ease-in-out;
   position: absolute;
-  content: "Password";
+  content: "Пароль";
   color: #989898;
   left: 0;
   bottom: 10px;
@@ -120,13 +121,24 @@
   color: #4789bd;
 }
 
+.error_wrapper {
+  position: relative;
+}
+.error_wrapper .error {
+  left: 0;
+  top: 5px;
+  position: absolute;
+  color: red;
+  font-size: 14px;
+}
+
 .login_menu_wrapper.register .input_login, .login_menu_wrapper.register .input_password {
   margin-top: 0;
 }
 .login_menu_wrapper.register .input_login span.active:before {
   transition: transform 0.25s ease-in-out;
   position: absolute;
-  content: "Login";
+  content: "Логин";
   color: #989898;
   left: 0;
   bottom: 10px;
@@ -135,7 +147,7 @@
 .login_menu_wrapper.register .input_password span.active:before {
   transition: transform 0.25s ease-in-out;
   position: absolute;
-  content: "Password";
+  content: "Пароль";
   color: #989898;
   left: 0;
   bottom: 10px;
@@ -174,7 +186,7 @@
 .login_menu_wrapper.register .input_phone span:before {
   transition: transform 0.25s ease-in-out;
   position: absolute;
-  content: "Phone";
+  content: "Номер телефона";
   color: #989898;
   left: 0;
   bottom: 10px;
@@ -183,7 +195,7 @@
 .login_menu_wrapper.register .input_phone span.active:before {
   transition: transform 0.25s ease-in-out;
   position: absolute;
-  content: "Phone";
+  content: "Номер телефона";
   color: #989898;
   left: 0;
   bottom: 10px;
@@ -200,16 +212,6 @@
 }
 .login_menu_wrapper.register .login_menu .input_field + .input_field {
   margin-top: 44px;
-}
-.login_menu_wrapper.register .error_wrapper {
-  position: relative;
-}
-.login_menu_wrapper.register .error_wrapper .error {
-  left: 0;
-  top: 5px;
-  position: absolute;
-  color: red;
-  font-size: 14px;
 }
 
 /*# sourceMappingURL=login_and_reg_menu.module.css.map */

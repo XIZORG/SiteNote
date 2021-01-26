@@ -14,6 +14,7 @@ export const sendRegisterToServer = (login, password, email, phone) => {
         email,
         phone
     }
+    console.log("Data from react: ");
     console.log(obj);
     return axios_in.post('registration', obj);
 }

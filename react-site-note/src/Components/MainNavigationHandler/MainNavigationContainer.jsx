@@ -8,14 +8,15 @@ const MainNavigationContainer = (props) => {
     console.log(props.currentPage);
     return (
         <div>
-            <MainNavigation currentPage={props.currentPage} setCurrentPage={props.setCurrentPage}/>
+            <MainNavigation currentPage={props.currentPage} setCurrentPage={props.setCurrentPage} isAuth={props.isAuth}/>
         </div>
     );
 }
 
 let mapStateToProps = (state) => {
     return {
-        currentPage: getCurrentPage(state)
+        currentPage: getCurrentPage(state),
+        isAuth: state.auth.isAuth
     }
 }
 

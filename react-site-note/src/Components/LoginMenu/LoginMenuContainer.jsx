@@ -5,8 +5,13 @@ import {compose} from "redux";
 import {reduxForm, stopSubmit} from "redux-form";
 import {sendAuthToServer} from "../../DAL/auth_api";
 import {tryToLogin} from "../../Redux/Reducers/auth-reducer";
+import {withRouter} from "react-router-dom";
 
 const LoginMenuContainer = (props) => {
+
+    if(props.isAuth) {
+        props.history.push('/');
+    }
 
     let onSubmit = (data) => {
         props.tryToLogin(data.login, data.password);
@@ -24,5 +29,6 @@ export default compose(
     connect(mapStateToProps, {
         tryToLogin
     }),
+    withRouter
 )
 (LoginMenuContainer)

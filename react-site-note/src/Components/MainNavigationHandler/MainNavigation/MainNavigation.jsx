@@ -50,19 +50,26 @@ const MainNavigation = (props) => {
                     </li>
                 </ul>
             </nav>
-            <div className={s.buttons_handler}>
-                <NavLink to="/register">
-                    <button onClick={() => {goToPage("RegisterMenu")}}>
-                        Зарегистрируйся!
-                    </button>
-                </NavLink>
-                <NavLink to="/login">
-                    <button onClick={() => {goToPage("LoginMenu")}}>
-                        Логин
-                    </button>
-                </NavLink>
-            </div>
-
+            {
+                !props.isAuth
+                    ? <div className={s.buttons_handler}>
+                        <NavLink to="/register">
+                            <button onClick={() => {
+                                goToPage("RegisterMenu")
+                            }}>
+                                Зарегистрируйся!
+                            </button>
+                        </NavLink>
+                        <NavLink to="/login">
+                            <button onClick={() => {
+                                goToPage("LoginMenu")
+                            }}>
+                                Логин
+                            </button>
+                        </NavLink>
+                    </div>
+                    : ""
+            }
         </div>
     );
 

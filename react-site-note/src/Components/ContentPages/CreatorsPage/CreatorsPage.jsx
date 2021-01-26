@@ -1,6 +1,7 @@
 import s from '../../../Styles/SCSS/ContentPages/creators_page.module.css'
-import creator1 from './../../../Styles/Images/Creators/PersonCardUnknown.jpg';
+import creator1 from './../../../Styles/Images/Creators/PersonCardOleg.jpg';
 import creator2 from './../../../Styles/Images/Creators/PersonCardEvgeniy.jpg';
+import N_logo from './../../../Styles/Images/N_logo.svg';
 
 const CreatorsPage = (props) => {
     return (
@@ -59,9 +60,19 @@ const CreatorsPage = (props) => {
             </div>
             <div className={s.footer}>
                 <div className={s.footer_title}>Оставайтесь на связи</div>
-                <div className={s.footer_info}>
-                    <div className={s.footer_info_left}>Info</div>
-                    <div className={s.footer_info_rigth}>Info</div>
+                <div className={s.footer_socials}>
+                    <a href="/">
+                        <img src={N_logo} alt=""/>
+                    </a>
+                    <a href="/">
+                        <img src={N_logo} alt=""/>
+                    </a>
+                    <a href="/">
+                        <img src={N_logo} alt=""/>
+                    </a>
+                    <a href="/">
+                        <img src={N_logo} alt=""/>
+                    </a>
                 </div>
             </div>
         </div>

@@ -29,7 +29,8 @@
   height: 550px;
   padding: 90px 50px 30px;
   border-radius: 7px;
-  box-shadow: black;
+
+  transition: all 0.3s ease-in;
 }
 
 .title {
@@ -71,9 +72,9 @@
     margin-top: 65px;
     span {
       transition: transform;
-      @include before_input_text('Login', $col_gray, 0);
+      @include before_input_text('Логин', $col_gray, 0);
       &.active {
-        @include before_input_text('Login', $col_gray, -35px);
+        @include before_input_text('Логин', $col_gray, -35px);
       }
     }
   }
@@ -83,9 +84,9 @@
     margin-top: 65px;
     span {
       transition: transform 0.2s ease-in;
-      @include before_input_text('Password', $col_gray, 0);
+      @include before_input_text('Пароль', $col_gray, 0);
       &.active {
-        @include before_input_text('Password', $col_gray, -35px);
+        @include before_input_text('Пароль', $col_gray, -35px);
       }
     }
   }
@@ -118,6 +119,18 @@
     }
   }
 }
+
+.error_wrapper {
+  position: relative;
+  .error {
+    left: 0;
+    top: 5px;
+    position: absolute;
+    color: red;
+    font-size: 14px;
+  }
+}
+
 //////////////////////////////REGISTER
 .login_menu_wrapper {
   &.register{
@@ -128,14 +141,14 @@
     .input_login {
       span {
         &.active {
-          @include before_input_text('Login', $col_gray, -25px);
+          @include before_input_text('Логин', $col_gray, -25px);
         }
       }
     }
     .input_password {
       span {
         &.active {
-          @include before_input_text('Password', $col_gray, -25px);
+          @include before_input_text('Пароль', $col_gray, -25px);
         }
       }
     }
@@ -153,9 +166,9 @@
       position: relative;
       span {
         transition: transform 0.2s ease-in;
-        @include before_input_text('Phone', $col_gray, 0);
+        @include before_input_text('Номер телефона', $col_gray, 0);
         &.active {
-          @include before_input_text('Phone', $col_gray, -25px);
+          @include before_input_text('Номер телефона', $col_gray, -25px);
         }
       }
     }
@@ -174,16 +187,7 @@
         margin-top: 44px;
       }
     }
-    .error_wrapper {
-      position: relative;
-      .error {
-        left: 0;
-        top: 5px;
-        position: absolute;
-        color: red;
-        font-size: 14px;
-      }
-    }
+
 
 
   }

@@ -89,6 +89,7 @@
 .footer {
   margin-top: 300px;
   position: relative;
+  text-align: center;
 }
 .footer::before {
   position: absolute;
@@ -103,6 +104,28 @@
 
 .footer_title {
   font-size: 34px;
+}
+
+.footer_info {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.footer_socials {
+  margin-top: 60px;
+  display: flex;
+  justify-content: space-around;
+}
+.footer_socials a {
+  transition: transform 0.1s ease-in;
+}
+.footer_socials a:hover {
+  transform: scale(1.1);
+}
+.footer_socials a img {
+  width: 40px;
 }
 
 /*# sourceMappingURL=creators_page.module.css.map */
