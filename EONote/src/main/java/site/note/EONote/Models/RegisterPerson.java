@@ -36,10 +36,10 @@ public class RegisterPerson {
     @Override
     public String toString() {
         return "{" +
-                "login='" + login + '\'' +
-                ", password='" + password + '\'' +
-                ", email='" + email + '\'' +
-                ", telephone='" + telephone + '\'' +
+                "login:'" + login + '\'' +
+                ", password:'" + password + '\'' +
+                ", email:'" + email + '\'' +
+                ", telephone:'" + telephone + '\'' +
                 '}';
     }
 

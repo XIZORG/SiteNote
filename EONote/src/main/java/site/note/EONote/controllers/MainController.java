@@ -57,7 +57,10 @@ public class MainController {
             truePerson.setPassword(encryptor.decrypt(truePerson.getPassword()));
             if (truePerson.getPassword().equals(registerPerson.getPassword())) {
                 answer.put("status", "successfully");
-                answer.put("person", truePerson);
+                answer.put("id", truePerson.getId());
+                answer.put("login", truePerson.getLogin());
+                answer.put("email", truePerson.getEmail());
+                answer.put("telephone", truePerson.getTelephone());
                 return answer.toString();
             }
         } catch (NullPointerException ex) {
