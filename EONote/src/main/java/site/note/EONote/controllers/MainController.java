@@ -46,7 +46,9 @@ public class MainController {
     }
 
     @RequestMapping("/login")
-    public RegisterPerson login (@RequestBody String reqStr) throws Exception{
+    public JSONObject login (@RequestBody String reqStr) throws Exception{
+        JSONObject answer = new JSONObject();
+
         JSONObject body = new JSONObject(reqStr);
         RegisterPerson registerPerson = new RegisterPerson(body.getString("login"),
                 body.getString("password"));
@@ -54,13 +56,16 @@ public class MainController {
             RegisterPerson truePerson = registerRepositories.findByLogin(body.getString("login"));
             truePerson.setPassword(encryptor.decrypt(truePerson.getPassword()));
             if (truePerson.getPassword().equals(registerPerson.getPassword())) {
-                truePerson.setPassword(null);
-                return truePerson;
+                answer.put("status", "successfully");
+                answer.put("person", truePerson);
+                return answer;
             }
         } catch (NullPointerException ex) {
-            return null;
+            answer.put("status", "user does not exist");
+            return answer;
         }
-        return null;
+        answer.put("status", "some false");
+        return answer;
     }
 
     @GetMapping("/getUser/{id}")
