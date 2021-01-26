@@ -33,6 +33,16 @@ public class RegisterPerson {
         this.telephone = telephone;
     }
 
+    @Override
+    public String toString() {
+        return "{" +
+                "login='" + login + '\'' +
+                ", password='" + password + '\'' +
+                ", email='" + email + '\'' +
+                ", telephone='" + telephone + '\'' +
+                '}';
+    }
+
     public void setTelephone(String telephone) {
         this.telephone = telephone;
     }
