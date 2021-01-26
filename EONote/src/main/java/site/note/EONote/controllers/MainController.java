@@ -33,12 +33,14 @@ public class MainController {
 
 
     @CrossOrigin(origins = "http://localhost:3000")
-    @RequestMapping("/addUser")
+    @RequestMapping("/registration")
     public String add (@RequestBody String reqStr) throws Exception{
         JSONObject body = new JSONObject(reqStr);
         System.out.println(body);
         registerRepositories.save(new RegisterPerson(body.getString("login"),
-                encryptor.encrypt(body.getString("password"))));
+                encryptor.encrypt(body.getString("password")),
+                body.getString("email"),
+                body.getString("telephone")));
 
         return "ok";
     }
@@ -67,11 +69,5 @@ public class MainController {
         ArrayList<RegisterPerson> result = new ArrayList<>();
         optional.ifPresent(result::add);
         return result;
-    }
-
-    @GetMapping("/getPassword/{id}")
-    public String showPassword(@PathVariable(value = "id") long id){
-        RegisterPerson post = registerRepositories.findById(id).orElseThrow();
-        return encryptor.decrypt(post.getPassword());
     }
 }

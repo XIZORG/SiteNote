@@ -26,10 +26,11 @@ public class RegisterPerson {
         return telephone;
     }
 
-    public RegisterPerson(Long id, String login, String password) {
-        this.id = id;
+    public RegisterPerson(String login, String password, String email, String telephone) {
         this.login = login;
         this.password = password;
+        this.email = email;
+        this.telephone = telephone;
     }
 
     public void setTelephone(String telephone) {
