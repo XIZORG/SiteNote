@@ -14,7 +14,7 @@ import java.util.Optional;
 
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/main")
 public class MainController {
     final String password = "Here is the password";
     final String salt = "97a6579f78ce3566";
@@ -69,7 +69,7 @@ public class MainController {
                         .put("id", truePerson.getId())
                         .put("login", truePerson.getLogin())
                         .put("email", truePerson.getEmail())
-                        .put("telephone", truePerson.getTelephone());
+                        .put("phone", truePerson.getTelephone());
 
                 answer.put("userData", userData);
                 return answer.toString();

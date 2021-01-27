@@ -1,0 +1,34 @@
+1) /api/main
+	POST /registration
+		gets body:
+			login: ""
+			email: ""
+			password: ""
+			phone: ""
+		response:
+			success: true
+			OR
+			success: false
+			comment: ""
+	POST /login
+		gets body:
+			login: ""
+			password: ""
+		response:
+			success: true
+			userData:
+				id: ""
+				login: ""
+				email: ""
+				phone: ""
+			OR
+			success: false
+	GET /getUser/{id}
+		gets body:
+			none
+		response: 
+			id: ""
+			login: ""
+			email: ""
+			telephone: ""
+			password: ""
