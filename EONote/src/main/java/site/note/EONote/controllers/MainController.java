@@ -21,7 +21,7 @@ public class MainController {
     TextEncryptor encryptor = Encryptors.text(password, salt);
 
     @Autowired
-    RegisterRepositories registerRepositories;
+    private RegisterRepositories registerRepositories;
 
     @GetMapping("/allUsers")
     public List<RegisterPerson> showAll(){
