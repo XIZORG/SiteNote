@@ -6,29 +6,31 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import site.note.EONote.Models.Calendar;
-import site.note.EONote.Models.RegisterPerson;
 import site.note.EONote.repositories.CalendarRepositories;
-import site.note.EONote.repositories.IventRepositories;
 
-import java.util.ArrayList;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
-import java.util.Optional;
 
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/api/calendar")
 public class CalendarController {
-    private CalendarRepositories calendarRepositories;
-    private IventRepositories iventRepositories;
+    private final CalendarRepositories calendarRepositories;
 
     @Autowired
-    public CalendarController(CalendarRepositories calendarRepositories, IventRepositories iventRepositories) {
+    public CalendarController(CalendarRepositories calendarRepositories) {
         this.calendarRepositories = calendarRepositories;
-        this.iventRepositories = iventRepositories;
     }
 
     @GetMapping("/getNearWeek")
     public List<Calendar> getNearWeek(){
-        return calendarRepositories.findTop7ByMonth(1);
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+        LocalDateTime now = LocalDateTime.now();
+        String dataStr = dtf.format(now);
+        int day = Integer.valueOf(dataStr.substring(8, 10));
+        int month = Integer.valueOf(dataStr.substring(5, 7));
+        System.out.println(day + "  " + month);
+        return calendarRepositories.findTop7ByDayAfterOrMonthAfter(day, month);
     }
 }

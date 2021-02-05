@@ -14,6 +14,14 @@ public class Ivent {
     private int day, month, year;
     private String descriptionOfEvent;
 
+    public Ivent(Long userId, int day, int month, int year, String descriptionOfEvent) {
+        this.userId = userId;
+        this.day = day;
+        this.month = month;
+        this.year = year;
+        this.descriptionOfEvent = descriptionOfEvent;
+    }
+
     public Long getUserId() {
         return userId;
     }
