@@ -32,3 +32,38 @@
 			email: ""
 			telephone: ""
 			password: ""
+2)/api/calendar
+	GET /getNearWeek
+		gets body:
+			none
+		response: 
+			massive:
+				iventPresent: ""
+				day: ""
+				month: ""
+				year: ""
+				weekDay: ""
+				descriptionOfEvent: ""
+				
+3)/api/ivent/
+	POST /setNewIvent
+		gets body:
+			userId: ""
+			day: ""
+			month: ""
+			year: ""
+			descriptionOfEvent: ""
+		response:
+			success: true
+			OR
+			success: false
+	GET /getNearIvents
+		gets body:
+			none
+		response: 
+			massive:
+				userId: ""
+				day: ""
+				month: ""
+				year: ""
+				descriptionOfEvent: ""
