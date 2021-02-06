@@ -27,7 +27,7 @@ public class IventController {
         JSONObject answer = new JSONObject();
         try {
             JSONObject body = new JSONObject(reqStr);
-            Ivent newIvent = new Ivent(body.getLong("user_id"), body.getInt("day"),
+            Ivent newIvent = new Ivent(body.getLong("userId"), body.getInt("day"),
                     body.getInt("month"), body.getInt("year"), body.getString("descriptionOfEvent"));
             iventRepositories.save(newIvent);
         } catch (JSONException ex){
