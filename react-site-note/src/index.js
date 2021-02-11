@@ -1,15 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {Provider} from "react-redux";
 import {store} from './Redux/redux-store';
 import {BrowserRouter} from "react-router-dom";
+import AppContainer from "./AppContainer";
 
 ReactDOM.render(
     <BrowserRouter>
         <Provider store={store}>
-            <App/>
+            <AppContainer/>
         </Provider>
     </BrowserRouter>,
     document.getElementById('root')

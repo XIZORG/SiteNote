@@ -89,6 +89,7 @@
   color: $col_gray;
 }
 .footer {
+
   margin-top: 300px;
   position: relative;
   text-align: center;
@@ -96,10 +97,10 @@
     position: absolute;
     content: "";
     background-color: $col_gray;
-    width: 99.5vw;
+    width: 34vw;
     top: -50px;
     left: 50%;
-    transform: translateX(-50vw);
+    transform: translateX(-17vw);
     height: 2px;
   }
 }

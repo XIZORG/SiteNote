@@ -30,3 +30,8 @@
     font-family: 'Poppins';
     font-weight: 700;
 }
+@font-face {
+    src: url('./../Fonts/lemon-milk-bold.otf');
+    font-family: 'Lemon_Milk_Bold';
+    font-weight: 400;
+}

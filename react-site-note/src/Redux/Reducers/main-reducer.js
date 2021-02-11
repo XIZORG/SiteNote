@@ -18,3 +18,7 @@ export const setCurrentPage = (page) => {
 }
 
 export default mainReducer;
+//-----------------------------
+export const getBasePages = () => {
+    return ['main', 'creators'];
+}

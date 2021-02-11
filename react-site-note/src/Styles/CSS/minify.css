@@ -147,4 +147,9 @@ body {
 a {
     color: white;
     text-decoration: none;
+    outline: none;
+}
+input {
+    border: 0;
+    outline: none;
 }

@@ -4,6 +4,7 @@ $bgcol2: #243238;
 //For letters
 $col_light_pink: #e35182;
 $col_light_green: #0fd58a;
+$col_light_dark_green: #0b9563;
 $col_light_purple: #a421c5;
 $col_light_yellow: #fdfc90;
 
@@ -11,6 +12,8 @@ $col_text_link: #4789bd;
 //Buttons
 $col_blue: #1869ff;
 $col_blue_dark: #0140b4;
+$col_blue_hover: rgba(0, 74, 255, 0.3);
+$col_blue_dark_hover: rgba(0, 3, 187, 0.3);
 
 $col_purple: #a421c5;
 $col_dark_purple: #6c0f86;
@@ -47,4 +50,25 @@ $col_gray: #989898;
   border-bottom-left-radius: 3px;
   border-bottom-right-radius: 3px;
 }
+@mixin profile_title($fz, $width) {
+  padding-left: 20px;
+  font-size: $fz;
+  position: relative;
+  width: $width;
+  padding-bottom: 10px;
+  &::after {
+    position: absolute;
+    content: "";
+    height: 2px;
+    width: $width;
+    background-color: gray;
+    bottom: 0;
+    left: 20px;
+  }
+}
 
+%thee_border {
+  border-bottom-right-radius: 400px;
+  border-top-right-radius: 400px;
+  border-top-left-radius: 400px;
+}

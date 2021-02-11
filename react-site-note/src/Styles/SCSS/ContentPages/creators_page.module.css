@@ -95,10 +95,10 @@
   position: absolute;
   content: "";
   background-color: #989898;
-  width: 99.5vw;
+  width: 34vw;
   top: -50px;
   left: 50%;
-  transform: translateX(-50vw);
+  transform: translateX(-17vw);
   height: 2px;
 }
 

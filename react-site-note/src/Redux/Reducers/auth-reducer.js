@@ -4,11 +4,18 @@ import {stopSubmit} from "redux-form";
 const SET_USER_DATA = "SET_USER_DATA";
 
 let initialState = {
-    isAuth: false,
+    isAuth: true,
     userData: {
-        login: null,
-        email: null,
-        phone: null
+        login: 'Vasya',
+        email: "super-vasya@mail.ru",
+        phone: "+380502140019",
+        photo: null,
+        id: 5,
+        birthday: {
+            day: "??",
+            month: "??",
+            year: "??"
+        }
     }
 };
 

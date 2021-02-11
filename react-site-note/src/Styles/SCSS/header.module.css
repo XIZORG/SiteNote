@@ -18,6 +18,55 @@
   width: 100%;
 }
 
+.logo_link {
+  font-family: "Lemon_Milk_Bold", serif;
+  font-size: 28px;
+  margin-left: 20px;
+  background-color: black;
+  width: 82px;
+  height: 80%;
+  border-top-left-radius: 400px;
+  border-top-right-radius: 400px;
+  border-bottom-right-radius: 400px;
+}
+.logo_link .letters_wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin-top: -2px;
+}
+.logo_link .letters_wrapper span:nth-child(1) {
+  color: #e35182;
+}
+.logo_link .letters_wrapper span:nth-child(2) {
+  color: #0fd58a;
+}
+.logo_link .letters_wrapper span:nth-child(3) {
+  color: #a421c5;
+}
+.logo_link .letters_wrapper:hover::before {
+  content: "";
+  position: absolute;
+  filter: blur(10px);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  mix-blend-mode: screen;
+  background-image: repeating-linear-gradient(45deg, transparent, transparent 1em, #BFE2FF 1em, #ce00c3 50%), repeating-linear-gradient(-45deg, #7900ff, #00e040 1em, #FFF 1em, #BFE2FF 50%);
+  background-size: 3em 3em, 2em 2em;
+}
+@keyframes ani {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 100% 0;
+  }
+}
+
 .nav {
   padding-right: 20px;
   font-size: 22px;
@@ -28,6 +77,9 @@
 }
 .nav ul li + li {
   padding-left: 20px;
+}
+.nav ul li a:hover {
+  color: #fdfc90;
 }
 
 /*# sourceMappingURL=header.module.css.map */

@@ -1,0 +1,543 @@
+.profile_menu {
+  display: flex;
+  padding-top: 20px;
+}
+
+.left_part {
+  position: relative;
+  font-family: "Poppins", serif;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 300px;
+  flex-grow: 0;
+}
+.left_part .avatar {
+  width: 100%;
+  padding-top: 40px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background: url("./../../Images/Profile/profile_avatar_background1.jpg") no-repeat;
+  padding-bottom: 20px;
+}
+.left_part .avatar img {
+  width: 140px;
+  border-radius: 400px;
+}
+.left_part .avatar .profile_name {
+  font-size: 30px;
+}
+.left_part .birthday_data {
+  user-select: none;
+  position: relative;
+  cursor: pointer;
+  font-size: 18px;
+  width: 100%;
+  height: 20px;
+  border-top: 2px gray solid;
+  display: flex;
+}
+.left_part .birthday_data div {
+  text-align: center;
+  width: 33.333%;
+}
+.left_part .birthday_data div:nth-child(1) {
+  color: #e35182;
+  width: 20%;
+}
+.left_part .birthday_data div:nth-child(2) {
+  color: #0fd58a;
+  width: 20%;
+}
+.left_part .birthday_data div:nth-child(3) {
+  color: #a421c5;
+  width: 60%;
+}
+.left_part .birthday_data div + div {
+  border-left: 2px solid gray;
+}
+.left_part .birthday_data:hover::before {
+  position: absolute;
+  content: "";
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background-color: rgba(0, 74, 255, 0.3);
+}
+.left_part .birthday_hint {
+  border-top: 2px gray solid;
+  font-size: 18px;
+  transition: height 0.3s ease-in;
+}
+.left_part .birthday_hint.birthday_hint_hidden {
+  display: none;
+}
+.left_part .profile_nav {
+  border-top: 2px solid gray;
+  font-family: "Lemon_Milk_Bold", serif;
+  width: 100%;
+  font-size: 20px;
+}
+.left_part .profile_nav .profile_nav_item {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  text-indent: 10px;
+  align-items: center;
+  height: 40px;
+  color: black;
+  background-color: rgba(127, 127, 127, 0);
+  transition: text-indent 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+.left_part .profile_nav .profile_nav_item:hover {
+  text-indent: 25px;
+  background-color: rgba(0, 3, 187, 0.3);
+}
+.left_part .profile_nav .profile_nav_item:hover::before {
+  position: absolute;
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 300px;
+  background-color: white;
+  left: 8px;
+  animation: fadein 0.4s;
+}
+.left_part .profile_nav .profile_nav_item a {
+  width: 100%;
+}
+
+.border_blue {
+  border: 2px solid #0140b4;
+  border-radius: 2px;
+}
+
+.right_part {
+  width: 900px;
+  padding-left: 50px;
+}
+.right_part .profile_main {
+  padding-bottom: 20px;
+}
+.right_part .profile_main .title {
+  width: 100%;
+  font-size: 36px;
+  padding-bottom: 50px;
+  position: relative;
+}
+.right_part .profile_main .title::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: gray;
+  bottom: 30px;
+  left: 0;
+}
+.right_part .profile_main .calendar_scroller_title {
+  position: relative;
+  width: 230px;
+  font-size: 24px;
+  text-indent: 20px;
+  padding-bottom: 20px;
+  user-select: none;
+  cursor: pointer;
+}
+.right_part .profile_main .calendar_scroller_title::after {
+  position: absolute;
+  content: "";
+  width: 215px;
+  height: 2px;
+  background-color: gray;
+  bottom: 14px;
+  left: 20px;
+}
+.right_part .profile_main .calendar_scroller {
+  width: 90%;
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0 5% 2% 5%;
+}
+.right_part .profile_main .calendar_scroller_item + .calendar_scroller_item {
+  margin-left: 40px;
+}
+.right_part .profile_main .calendar_scroller_item + .calendar_scroller_item::before {
+  content: "";
+  width: 40px;
+  position: absolute;
+  left: -40px;
+  top: 50%;
+  background-color: red;
+  height: 3px;
+}
+.right_part .profile_main .calendar_scroller_item {
+  position: relative;
+  padding: 15px;
+  background-color: #0140b4;
+  user-select: none;
+  cursor: pointer;
+}
+.right_part .profile_main .calendar_scroller_item:hover:after {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: gray;
+  opacity: 0.3;
+  content: "";
+}
+.right_part .profile_main .calendar_item_day {
+  padding-bottom: 10px;
+  font-size: 26px;
+}
+.right_part .profile_main .calendar_item_date {
+  text-align: center;
+}
+.right_part .profile_main .calendar_item_stars {
+  position: absolute;
+  color: red;
+  font-size: 24px;
+  left: 16px;
+  letter-spacing: 4px;
+}
+.right_part .profile_main .calendar_scroller_footer {
+  display: flex;
+  width: 90%;
+  margin-top: 10px;
+  justify-content: flex-end;
+}
+.right_part .profile_main .calendar_scroller_footer .btn_open_full_calendar {
+  padding: 5px;
+  font-size: 15px;
+  border-radius: 12px;
+  background-color: #0140b4;
+  transition: transform 0.1s ease-in;
+  transform: scale(1, 1);
+}
+.right_part .profile_main .calendar_scroller_footer .btn_open_full_calendar:hover {
+  transform: scale(1.1, 1.1);
+}
+.right_part .profile_main .holidays_title {
+  padding-left: 20px;
+  font-size: 26px;
+  position: relative;
+  width: 270px;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+.right_part .profile_main .holidays_title::after {
+  position: absolute;
+  content: "";
+  height: 2px;
+  width: 270px;
+  background-color: gray;
+  bottom: 0;
+  left: 20px;
+}
+.right_part .profile_main .holidays_wrapper {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  padding-top: 20px;
+}
+.right_part .profile_main .holidays_wrapper .nearest_happy_birthdays_wrapper .nearest_happy_birthdays .person + .person {
+  padding-top: 10px;
+}
+.right_part .profile_main .holidays_wrapper .nearest_happy_birthdays_wrapper .person {
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  background-color: rgba(0, 0, 0, 0);
+}
+.right_part .profile_main .holidays_wrapper .nearest_happy_birthdays_wrapper .person:hover {
+  content: "";
+  background-color: rgba(0, 3, 187, 0.3);
+}
+.right_part .profile_main .holidays_wrapper .nearest_happy_birthdays_wrapper .person_avatar {
+  padding-bottom: 2px;
+}
+.right_part .profile_main .holidays_wrapper .nearest_happy_birthdays_wrapper .person_avatar img {
+  border-radius: 30px;
+  width: 50px;
+}
+.right_part .profile_main .holidays_wrapper .nearest_holidays_wrapper .holiday {
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.5s ease-in-out;
+  background-color: rgba(0, 0, 0, 0);
+  padding: 10px;
+}
+.right_part .profile_main .holidays_wrapper .nearest_holidays_wrapper .holiday:hover {
+  content: "";
+  background-color: #6c0f86;
+}
+.right_part .profile_main .btn_new_event_wrapper {
+  padding-top: 30px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.right_part .profile_new_event .main_title {
+  padding-left: 20px;
+  font-size: 26px;
+  position: relative;
+  width: 200px;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  user-select: none;
+}
+.right_part .profile_new_event .main_title::after {
+  position: absolute;
+  content: "";
+  height: 2px;
+  width: 200px;
+  background-color: gray;
+  bottom: 0;
+  left: 20px;
+}
+.right_part .profile_new_event .uptitle_wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.right_part .profile_new_event .uptitle_wrapper.uptitle_hidden {
+  display: none;
+}
+.right_part .profile_new_event .uptitle_wrapper .uptitle {
+  width: 66%;
+  border: 2px #0140b4 dashed;
+  font-style: italic;
+  padding: 10px;
+  text-align: center;
+}
+.right_part .profile_new_event .input_wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 20px;
+}
+.right_part .profile_new_event .input_wrapper .profile_input_item {
+  position: relative;
+  width: 33%;
+  color: red;
+}
+.right_part .profile_new_event .input_wrapper .profile_input_item .profile_input_item_title {
+  font-style: italic;
+  text-indent: 15px;
+  color: white;
+  padding-bottom: 5px;
+}
+.right_part .profile_new_event .input_wrapper .profile_input_item input {
+  width: 100%;
+  border-radius: 20px;
+  padding: 10px;
+  font-size: 20px;
+}
+.right_part .profile_new_event .input_wrapper .profile_input_item .error_wrapper {
+  position: absolute;
+}
+.right_part .profile_new_event .btn_add_event_wrapper {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+.right_part .profile_new_event .btn_add_event_wrapper button {
+  color: white;
+}
+.right_part .profile_new_event .success {
+  text-align: center;
+  margin-top: 15px;
+}
+.right_part .profile_new_event .success .success_text {
+  color: #0fd58a;
+  margin-bottom: 20px;
+}
+.right_part .profile_new_event .success .success_link a {
+  color: white;
+  background-color: #0fd58a;
+  padding: 10px;
+  border-radius: 10px;
+}
+.right_part .profile_new_event .success .success_link a:hover {
+  background-color: #0b9563;
+}
+.right_part .profile_new_event .error_all {
+  color: red;
+  margin: 10px 0;
+  text-align: center;
+}
+.right_part .profile_calendar .title {
+  padding-left: 20px;
+  font-size: 36px;
+  position: relative;
+  width: 240px;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+.right_part .profile_calendar .title::after {
+  position: absolute;
+  content: "";
+  height: 2px;
+  width: 240px;
+  background-color: gray;
+  bottom: 0;
+  left: 20px;
+}
+.right_part .profile_calendar .calendar {
+  display: flex;
+  min-height: 600px;
+}
+.right_part .profile_calendar .calendar_left_part {
+  background-color: #0140b4;
+  border-radius: 10px;
+  width: 25%;
+  margin-right: 5%;
+  display: flex;
+  flex-direction: column;
+}
+.right_part .profile_calendar .calendar_left_part .calendar_left_part_add_button {
+  color: white;
+  font-size: 18px;
+  width: 200px;
+  align-self: center;
+  margin-top: 7px;
+  margin-bottom: 40px;
+  background-color: #1869ff;
+  border-radius: 10px;
+}
+.right_part .profile_calendar .calendar_left_part .calendar_left_part_add_button:hover {
+  background-color: #4381ff;
+}
+.right_part .profile_calendar .calendar_left_part .calendar_left_part_title {
+  font-size: 24px;
+  font-family: "Poppins", serif;
+  text-align: center;
+  margin-bottom: 40px;
+  min-height: 27px;
+}
+.right_part .profile_calendar .calendar_left_part .calendar_left_part_events .calendar_event {
+  padding: 12px 0;
+  cursor: pointer;
+  text-indent: 20px;
+  position: relative;
+  font-size: 16px;
+}
+.right_part .profile_calendar .calendar_left_part .calendar_left_part_events .calendar_event:before {
+  content: "";
+  position: absolute;
+  border-radius: 100px;
+  background-color: white;
+  left: 7px;
+  width: 8px;
+  height: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.right_part .profile_calendar .calendar_left_part .calendar_left_part_events .calendar_event:hover {
+  color: #1869ff;
+}
+.right_part .profile_calendar .calendar_right_part {
+  background-color: #0140b4;
+  padding: 5px;
+  width: 70%;
+  border-radius: 10px;
+}
+.right_part .profile_calendar .calendar_right_part .cr_row {
+  display: flex;
+  justify-content: flex-start;
+}
+.right_part .profile_calendar .calendar_right_part .cr_col {
+  width: calc(100% / 7);
+  text-align: center;
+  height: 50px;
+  line-height: 50px;
+  text-transform: uppercase;
+}
+.right_part .profile_calendar .calendar_right_part .cr_cell {
+  position: relative;
+  width: calc(100% / 7);
+  text-align: center;
+  cursor: pointer;
+}
+.right_part .profile_calendar .calendar_right_part .cr_cell:before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+  border-radius: 50%;
+}
+.right_part .profile_calendar .calendar_right_part .cr_cell:hover::before {
+  background-color: rgba(0, 74, 255, 0.3);
+}
+.right_part .profile_calendar .calendar_right_part .cr_cell p {
+  position: absolute;
+  margin: 0;
+  top: 50%;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background-color: rgba(0, 3, 187, 0.3);
+}
+.right_part .profile_calendar .calendar_right_part .cr_cell p[data-event="1"]:after {
+  background-color: red;
+  content: "";
+  width: 6px;
+  height: 6px;
+  position: absolute;
+  bottom: 3px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 10px;
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 30%;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.right_part .profile_main .holidays_wrapper .nearest_happy_birthdays_wrapper, .right_part .profile_main .holidays_wrapper .nearest_holidays_wrapper {
+  width: 33%;
+  position: relative;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.right_part .profile_main .holidays_wrapper .nearest_happy_birthdays_wrapper .happy_birthdays_title, .right_part .profile_main .holidays_wrapper .nearest_holidays_wrapper .nearest_holidays_title {
+  font-size: 24px;
+  padding-bottom: 10px;
+  padding-top: 5px;
+}
+
+.right_part .profile_main .btn_new_event_wrapper a, .right_part .profile_new_event .btn_add_event_wrapper button {
+  background-color: #1869ff;
+  padding: 15px 60px;
+  box-shadow: 7px 7px 5px 0 rgba(50, 50, 50, 0.2);
+  font-size: 25px;
+}
+.right_part .profile_main .btn_new_event_wrapper a:hover, .right_part .profile_new_event .btn_add_event_wrapper button:hover {
+  background-color: #0140b4;
+}
+
+.right_part .profile_main .calendar_scroller_title:hover::before, .right_part .profile_new_event .main_title:hover::before {
+  position: absolute;
+  content: "?";
+  font-size: 16px;
+  color: blue;
+  right: -5px;
+  top: -3px;
+}
+
+/*# sourceMappingURL=profile_menu.module.css.map */
