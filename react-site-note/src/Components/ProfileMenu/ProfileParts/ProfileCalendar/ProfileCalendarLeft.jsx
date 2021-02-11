@@ -1,6 +1,12 @@
 import s from "../../../../Styles/SCSS/ProfileMenu/profile_menu.module.css";
-
+import React from 'react';
 const ProfileCalendarLeft = (props) => {
+
+    let dayEvents = props.eventsOfCurrentDay.map(item => {
+        return <div className={s.calendar_event}>
+            {item.name}
+        </div>
+    });
 
     return (<>
         <button className={s.calendar_left_part_add_button}>
@@ -10,15 +16,7 @@ const ProfileCalendarLeft = (props) => {
             {props.selectedDate[1] + " " + props.selectedDate[0]}
         </div>
         <div className={s.calendar_left_part_events}>
-            <div className={s.calendar_event}>
-                День Фламинго
-            </div>
-            <div className={s.calendar_event}>
-                День Фламинго
-            </div>
-            <div className={s.calendar_event}>
-                День Фламинго
-            </div>
+            {dayEvents}
         </div>
     </>);
 }

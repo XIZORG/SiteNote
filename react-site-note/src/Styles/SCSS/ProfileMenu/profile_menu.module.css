@@ -469,9 +469,14 @@
   display: block;
   padding-top: 100%;
   border-radius: 50%;
+  transition: background-color 0.5s ease-in;
+  background-color: rgba(0, 0, 0, 0);
 }
 .right_part .profile_calendar .calendar_right_part .cr_cell:hover::before {
   background-color: rgba(0, 74, 255, 0.3);
+}
+.right_part .profile_calendar .calendar_right_part .cr_cell:hover p {
+  background-color: #000190;
 }
 .right_part .profile_calendar .calendar_right_part .cr_cell p {
   position: absolute;
@@ -482,11 +487,12 @@
   height: 40px;
   line-height: 40px;
   transform: translate(-50%, -50%);
+  transition: background-color 0.5s ease-in-out;
   border-radius: 50%;
   background-color: rgba(0, 3, 187, 0.3);
 }
-.right_part .profile_calendar .calendar_right_part .cr_cell p[data-event="1"]:after {
-  background-color: red;
+.right_part .profile_calendar .calendar_right_part .cr_cell p:after {
+  background-color: rgba(0, 0, 0, 0);
   content: "";
   width: 6px;
   height: 6px;
@@ -495,6 +501,49 @@
   left: 50%;
   transform: translateX(-50%);
   border-radius: 10px;
+}
+.right_part .profile_calendar .calendar_right_part .cr_cell p[data-event-priority="1"]:after {
+  background-color: white;
+}
+.right_part .profile_calendar .calendar_right_part .cr_cell p[data-event-priority="2"]:after {
+  background-color: green;
+}
+.right_part .profile_calendar .calendar_right_part .cr_cell p[data-event-priority="3"]:after {
+  background-color: blue;
+}
+.right_part .profile_calendar .calendar_right_part .cr_cell p[data-event-priority="4"]:after {
+  background-color: orange;
+}
+.right_part .profile_calendar .calendar_right_part .cr_cell p[data-event-priority="5"]:after {
+  background-color: red;
+}
+.right_part .profile_calendar .calendar_month_swiper {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  color: white;
+}
+.right_part .profile_calendar .calendar_month_swiper .btn_cal {
+  cursor: pointer;
+  background-color: #0140b4;
+  border-radius: 30px;
+  height: 50px;
+  width: 50px;
+  line-height: 20px;
+}
+.right_part .profile_calendar .calendar_month_swiper .btn_cal:hover {
+  background-color: #1869ff;
+}
+.right_part .profile_calendar .calendar_month_swiper .btn_cal_left {
+  color: white;
+}
+.right_part .profile_calendar .calendar_month_swiper .btn_current_month {
+  margin: 0 20px;
+}
+.right_part .profile_calendar .calendar_month_swiper .btn_cal_left {
+  color: white;
 }
 
 @keyframes fadein {
