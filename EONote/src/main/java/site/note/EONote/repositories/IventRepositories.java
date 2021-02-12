@@ -7,5 +7,5 @@ import site.note.EONote.Models.Ivent;
 import java.util.ArrayList;
 
 public interface IventRepositories extends JpaRepository<Ivent, Long> {
-    ArrayList<Ivent> findTop7ByDayAfterOrMonthAfter(int day, int month);
+    ArrayList<Ivent> findTop7ByDayAfterOrMonthAfterAndUserId(int day, int month, Long id);
 }

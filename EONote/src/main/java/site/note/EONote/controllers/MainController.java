@@ -29,7 +29,7 @@ public class MainController {
     }
 
 
-    @RequestMapping("/registration")
+    @PostMapping("/registration")
     public String add (@RequestBody String reqStr) throws Exception{
         JSONObject body = new JSONObject(reqStr);
         RegisterPerson truePers = registerRepositories.findByLoginOrEmailOrTelephone(
@@ -53,7 +53,7 @@ public class MainController {
         }
     }
 
-    @RequestMapping("/login")
+    @PostMapping("/login")
     public String login (@RequestBody String reqStr) throws Exception{
         JSONObject answer = new JSONObject();
 
